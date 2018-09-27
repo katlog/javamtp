@@ -66,6 +66,7 @@ public class AlarmMgr {
 		alarmSendingThread.start();
 	}
 
+	// 为何一定要用同步的方式呢？
 	public synchronized void shutdown() {
 		if (shutdownRequested) {
 			throw new IllegalStateException("shutdown already requested!");
