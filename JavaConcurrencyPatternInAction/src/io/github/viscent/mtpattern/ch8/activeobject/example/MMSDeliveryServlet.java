@@ -32,9 +32,7 @@ public class MMSDeliveryServlet extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        /*
-         * 将请求中的数据解析为内部对象。 类MMSDeliverRequest、Recipient等源码参见本书的配套下载。
-         */
+        /** 将请求中的数据解析为内部对象。 类MMSDeliverRequest、Recipient等源码参见本书的配套下载。*/
         MMSDeliverRequest mmsDeliverReq =
                 this.parseRequest(req.getInputStream());
         Recipient shortNumberRecipient = mmsDeliverReq.getRecipient();

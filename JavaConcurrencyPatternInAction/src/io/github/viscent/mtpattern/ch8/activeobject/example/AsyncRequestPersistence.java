@@ -53,14 +53,14 @@ public class AsyncRequestPersistence implements RequestPersistence {
                 TimeUnit.SECONDS,
                 // 模式角色：ActiveObject.ActivationQueue
                 new ArrayBlockingQueue<Runnable>(200), new ThreadFactory() {
-                    @Override
-                    public Thread newThread(Runnable r) {
-                        Thread t;
-                        t = new Thread(r, "AsyncRequestPersistence");
-                        return t;
-                    }
+            @Override
+            public Thread newThread(Runnable r) {
+                Thread t;
+                t = new Thread(r, "AsyncRequestPersistence");
+                return t;
+            }
 
-                });
+        });
 
         scheduler.setRejectedExecutionHandler(
                 new ThreadPoolExecutor.CallerRunsPolicy());

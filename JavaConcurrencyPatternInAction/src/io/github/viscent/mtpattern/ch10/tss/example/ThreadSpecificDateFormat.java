@@ -23,13 +23,14 @@ public class ThreadSpecificDateFormat {
     static {
         TS_SDF = new ThreadLocal<SimpleDateFormat>() {
 
-                @Override
-                protected SimpleDateFormat initialValue() {
-                    return new SimpleDateFormat();
-                }
+            @Override
+            protected SimpleDateFormat initialValue() {
+                return new SimpleDateFormat();
+            }
 
-            };
+        };
     }
+
     public static Date parse(String timeStamp, String format)
             throws ParseException {
         final SimpleDateFormat sdf = TS_SDF.get();
